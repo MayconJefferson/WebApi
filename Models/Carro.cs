@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Webapi.Models
 {
@@ -24,6 +25,8 @@ namespace Webapi.Models
     [Required]
     [ForeignKey("MarcaId")]
     public int MarcaId { get; set; }
+
+    [JsonIgnore]
     public Marca Marca { get; set; }
 
     [Column("ano", TypeName = "int")]
