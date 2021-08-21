@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Webapi.Models
 {
@@ -15,6 +16,7 @@ namespace Webapi.Models
     [MaxLength(150)]
     [Required]
     public string Nome { get;set; }
+    [JsonIgnore]
 
     public ICollection<Carro> Carros { get;set; }
   }
